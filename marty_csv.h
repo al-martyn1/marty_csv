@@ -13,6 +13,8 @@
 namespace marty_csv {
 
 
+
+//----------------------------------------------------------------------------
 // https://ru.wikipedia.org/wiki/CSV
 // https://datatracker.ietf.org/doc/html/rfc4180
 inline
@@ -49,7 +51,7 @@ std::string serializeToCsvField(const std::string &s, char sep=';')
 
 }
 
-
+//----------------------------------------------------------------------------
 inline
 std::string serializeToCsv(const std::vector< std::vector<std::string> > &csvLines, const std::string &lf="\n", char sep=';')
 {
@@ -80,11 +82,13 @@ std::string serializeToCsv(const std::vector< std::vector<std::string> > &csvLin
     return resStr;
 }
 
+//----------------------------------------------------------------------------
 
 
 
 
-//! CR всегда игнорируем 
+//----------------------------------------------------------------------------
+//! Разбор CSV данных. CR всегда игнорируем 
 inline
 std::vector< std::vector<std::string> > deserializeFieldsFromCsvLines(const std::string &str, char sep=';')
 {
@@ -229,6 +233,7 @@ std::vector< std::vector<std::string> > deserializeFieldsFromCsvLines(const std:
 
 }
 
+//----------------------------------------------------------------------------
 template<typename ToWideConverter> inline
 std::vector< std::vector<std::wstring> > csvFieldsToWide(const std::vector< std::vector<std::string> > &lines, ToWideConverter converter)
 {
@@ -248,6 +253,7 @@ std::vector< std::vector<std::wstring> > csvFieldsToWide(const std::vector< std:
     return recVec;
 }
 
+//----------------------------------------------------------------------------
 template<typename ToAsciiConverter> inline
 std::vector< std::vector<std::string> > csvFieldsToAnsi(const std::vector< std::vector<std::wstring> > &lines, ToAsciiConverter converter)
 {
@@ -267,6 +273,11 @@ std::vector< std::vector<std::string> > csvFieldsToAnsi(const std::vector< std::
     return recVec;
 }
 
+//----------------------------------------------------------------------------
+
+
+
+//----------------------------------------------------------------------------
 
 } // namespace marty_csv
 

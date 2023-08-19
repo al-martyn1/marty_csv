@@ -102,6 +102,35 @@ std::string to_ascii(const wchar_t* str)
 }
 
 //----------------------------------------------------------------------------
+struct CToAscii
+{
+    std::string operator()(const char* str) const
+    {
+        return to_ascii(str);
+    }
+
+    std::string operator()(const std::string &str) const
+    {
+        return to_ascii(str);
+    }
+
+    std::string operator()(const std::wstring &str) const
+    {
+        return to_ascii(str);
+    }
+
+    std::string operator()(const wchar_t* str) const
+    {
+        return to_ascii(str);
+    }
+
+    std::string operator()() const
+    {
+    }
+
+}; // struct CToAscii
+
+//----------------------------------------------------------------------------
 
 
 
@@ -135,6 +164,31 @@ std::wstring to_wide(const char* str)
 {
     return str ? to_wide(std::string(str)) : std::wstring();
 }
+
+//----------------------------------------------------------------------------
+struct CToWide
+{
+    std::wstring operator()(const wchar_t* str) const
+    {
+        return to_wide(str);
+    }
+
+    std::wstring operator()(const std::wstring &str) const
+    {
+        return to_wide(str);
+    }
+
+    std::wstring operator()(const std::string &str) const
+    {
+        return to_wide(str);
+    }
+
+    std::wstring operator()(const char* str) const
+    {
+        return to_wide(str);
+    }
+
+}; // struct CToWide
 
 //----------------------------------------------------------------------------
 
