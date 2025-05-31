@@ -52,7 +52,7 @@ void printError(StreamType &oss, const ParseError &pe)
 {
     using std::to_string;
 
-    oss << pe.line << ":" << pe.position << ": " << to_string(pe.type) << ": " << pe.message << "\n";
+    oss << pe.line << ":" << pe.position << ": " << to_string(pe.type) << ": " << pe.message; // << "\n";
 }
 
 struct ParseResult
