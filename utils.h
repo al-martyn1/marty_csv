@@ -124,9 +124,9 @@ struct CToAscii
         return to_ascii(str);
     }
 
-    std::string operator()() const
-    {
-    }
+    // std::string operator()() const
+    // {
+    // }
 
 }; // struct CToAscii
 
