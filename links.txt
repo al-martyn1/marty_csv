@@ -1,1 +1,2 @@
 Язвы и грабли CSV и Excel: проблемы и решения - http://habrahabr.ru/company/mailru/blog/129476/
+library for manipulating spreadsheets in memory and reading/writing them from/to XLSX files as described in ECMA 376 4th edition - https://github.com/tfussell/xlnt

@@ -23,10 +23,10 @@ endif()
 set(MODULE_ROOT "${CMAKE_CURRENT_LIST_DIR}")
 
 file(GLOB sources "${MODULE_ROOT}/*.cpp")
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "Sources" FILES ${sources})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "Source Files" FILES ${sources})
 
 file(GLOB_RECURSE headers "${MODULE_ROOT}/*.h")
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "Headers" FILES ${headers})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "Header Files" FILES ${headers})
 
 file(GLOB_RECURSE all_docs "${MODULE_ROOT}/*.md" "${MODULE_ROOT}/*.txt")
 list(FILTER all_docs EXCLUDE REGEX ".*CMakeLists\.txt$")
